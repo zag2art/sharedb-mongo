@@ -1,19 +1,19 @@
 {
   "name": "sharedb-mongo",
-  "version": "0.5.3",
+  "version": "0.8.2",
   "description": "MongoDB database adapter for ShareDB",
   "main": "index.js",
   "dependencies": {
     "async": "^1.4.2",
-    "mongodb": "^2.0.45",
-    "sharedb": "^0.8.0"
+    "mongodb": "^2.1.2",
+    "sharedb": "^0.11.6"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "mocha": "^2.3.3"
   },
   "scripts": {
-    "test": "node_modules/.bin/mocha --reporter spec test.js"
+    "test": "node_modules/.bin/mocha --reporter spec --timeout 5000 test.js"
   },
   "repository": "git://github.com/share/sharedb-mongo.git",
   "author": "Nate Smith and Joseph Gentle",
