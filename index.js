@@ -635,7 +635,8 @@ ShareDbMongo.prototype._query = function(collection, inputQuery, projection, cal
   }
 
   if (query.$aggregate) {
-    collection.aggregate(query.$aggregate, function(err, extra) {
+    var options = {readPreference: 'secondaryPreferred'};
+    collection.aggregate(query.$aggregate, options, function(err, extra) {
       if (err) return callback(err);
       callback(null, [], extra);
     });
