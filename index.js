@@ -53,6 +53,14 @@ function ShareDbMongo(mongo, options) {
     this.mongo = null;
     this.mongoPoll = null;
     this.pendingConnect = [];
+
+    delete options.pollDelay;
+    delete options.mongoPoll;
+    delete options.disableIndexCreation;
+    delete options.allowAllQueries;
+    delete options.allowJSQueries;
+    delete options.allowAggregateQueries;
+
     this._connect(mongo, options);
   } else {
     this.mongo = mongo;
